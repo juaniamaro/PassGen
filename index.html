@@ -1,162 +1,206 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#080b10">
-    <title>pass_gen.exe | Generador de contraseñas</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#02070b">
+<title>pass_gen.exe | Cyber Tools</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="app">
-        <header class="topbar">
-            <div class="logo">
-                <div class="logo-icon" aria-hidden="true">&gt;_</div>
-                <div>
-                    <h1>pass_gen<span>.exe</span></h1>
-                    <p>Genera contraseñas. Protege tu mundo.</p>
-                </div>
-            </div>
-            <div class="etiqueta">[ ONLINE ]</div>
-        </header>
 
-        <nav class="navbar" aria-label="Navegación principal">
-            <button class="nav-item active" type="button" data-section="generator">Generador</button>
-            <button class="nav-item" type="button" data-section="tips">Consejos</button>
-            <button class="nav-item" type="button" data-section="about">Acerca de</button>
-        </nav>
+<header class="topbar">
+  <div>
+    <div class="brand"><span class="prompt">&gt;</span> pass_gen.exe</div>
+    <p class="tagline">Genera contraseñas. Protege tu mundo.</p>
+  </div>
+  <div class="online">
+    <span>[ ONLINE ]</span>
+    <i></i>
+  </div>
+</header>
 
-        <section class="hero">
-            <div class="etiqueta-superior">● SISTEMA DE SEGURIDAD ACTIVO</div>
-            <h2>Tu próxima contraseña,<br><span>imposible de adivinar.</span></h2>
-            <p>Crea contraseñas aleatorias con caracteres seguros y ajusta su longitud según tus necesidades.</p>
-        </section>
+<main class="dashboard">
 
-        <main class="contenido-principal">
-            <section class="tarjeta" id="generator">
-                <div class="tarjeta-cabecera">
-                    <div>
-                        <h3>Generador de contraseñas</h3>
-                        <p>Configura los parámetros de generación</p>
-                    </div>
-                    <span class="etiqueta">v1.0</span>
-                </div>
+  <!-- LEFT SIDEBAR -->
+  <aside class="panel sidebar">
+    <nav class="nav" aria-label="Navegación principal">
+      <button class="active" data-section="generator">Generador</button>
+      <button data-section="tips-panel">Consejos</button>
+      <button data-section="about">Acerca de</button>
+    </nav>
 
-                <div class="password-container">
-                    <input id="password" type="text" readonly aria-label="Contraseña generada" autocomplete="off" spellcheck="false">
-                    <button id="copyBtn" type="button">▢ Copiar</button>
-                </div>
+    <p class="quote">“La seguridad<br>no es un producto,<br>es un hábito.”</p>
+  </aside>
 
-                <div class="strength-container">
-                    <div class="strength-info">
-                        <span>Fuerza estimada</span>
-                        <span id="strengthText">—</span>
-                    </div>
-                    <div class="strength-bar" role="progressbar" aria-label="Fuerza estimada" aria-valuemin="0" aria-valuemax="100">
-                        <div class="strength-fill" id="strengthFill"></div>
-                    </div>
-                </div>
-
-                <div class="opcion">
-                    <div class="opcion-cabecera">
-                        <label for="length">Longitud de la contraseña</label>
-                        <span id="lengthValue">16</span>
-                    </div>
-                    <input id="length" type="range" min="8" max="64" value="16">
-                    <div class="limites-longitud"><span>8 caracteres</span><span>64 caracteres</span></div>
-                </div>
-
-                <div class="opcion">
-                    <div class="opcion-cabecera">
-                        <label>Tipos de caracteres</label>
-                    </div>
-                    <div class="grupos-caracteres">
-                        <div class="grupo-caracteres">
-                            <input type="checkbox" id="mayusculas" checked>
-                            <label for="mayusculas">Mayúsculas <small>ABCDEFGHIJKLMNOPQRSTUVWXYZ</small></label>
-                        </div>
-                        <div class="grupo-caracteres">
-                            <input type="checkbox" id="minusculas" checked>
-                            <label for="minusculas">Minúsculas <small>abcdefghijklmnopqrstuvwxyz</small></label>
-                        </div>
-                        <div class="grupo-caracteres">
-                            <input type="checkbox" id="numeros" checked>
-                            <label for="numeros">Números <small>0123456789</small></label>
-                        </div>
-                        <div class="grupo-caracteres">
-                            <input type="checkbox" id="simbolos" checked>
-                            <label for="simbolos">Símbolos <small>!@#$%^&amp;*()-_=+[]{};:,.&lt;&gt;?</small></label>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="generate-button" id="generateBtn" type="button">⟳ Generar contraseña</button>
-            </section>
-
-            <aside class="panel-lateral">
-                <section class="panel-bloque" id="tips">
-                    <h3>♧ Consejos rápidos</h3>
-                    <ul class="lista-consejos">
-                        <li>Usa una contraseña diferente para cada servicio.</li>
-                        <li>No incluyas información personal fácil de adivinar.</li>
-                        <li>Utiliza un gestor de contraseñas.</li>
-                        <li>Activa la autenticación en dos pasos (2FA).</li>
-                    </ul>
-                </section>
-
-                <section class="panel-bloque">
-                    <h3>Estadísticas de generación</h3>
-                    <p>Resumen de las opciones seleccionadas.</p>
-                    <div class="estadisticas">
-                        <div class="estadistica">
-                            <strong id="groupCount">4</strong>
-                            <span>Grupos activos</span>
-                        </div>
-                        <div class="estadistica">
-                            <strong id="poolCount">94</strong>
-                            <span>Caracteres disponibles</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="panel-bloque">
-                    <h3>Terminal del sistema</h3>
-                    <div class="terminal">
-                        <div class="terminal-cabecera">
-                            <span class="terminal-punto"></span>
-                            <span class="terminal-punto"></span>
-                            <span class="terminal-punto"></span>
-                            <span class="terminal-titulo">pass_gen.exe — console</span>
-                        </div>
-                        <div class="terminal-contenido">
-                            <p>&gt; Inicializando generador...</p>
-                            <p>&gt; <span class="terminal-secundario">crypto.getRandomValues()</span></p>
-                            <p>&gt; Estado: <span class="terminal-secundario">LISTO</span><span class="terminal-cursor"></span></p>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-        </main>
-
-        <section class="panel-bloque" id="about" style="margin-top:20px">
-            <h3>Acerca de pass_gen.exe</h3>
-            <p>Generador de contraseñas que utiliza la API criptográfica del navegador para obtener valores aleatorios. La estimación de fuerza es teórica y depende de la longitud y de los tipos de caracteres seleccionados.</p>
-            <div class="matrix-container" aria-hidden="true" style="margin-top:15px">
-                <div id="matrixChars"></div>
-                <div class="matrix-texto">SYSTEM SECURE // PASS_GEN.EXE</div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <span>Hecho con ♥ para una internet más segura.</span>
-            <span>pass_gen.exe <span>v1.0</span></span>
-        </footer>
+  <!-- MAIN GENERATOR -->
+  <section class="panel generator" id="generator">
+    <div class="section-heading">
+      <h1>GENERADOR DE CONTRASEÑAS</h1>
+      <span class="version">v1.0</span>
     </div>
 
-    <div id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js"></script>
+    <div class="password-row">
+      <div class="lock" aria-hidden="true">♟</div>
+      <input id="password" type="text" readonly
+        aria-label="Contraseña generada"
+        autocomplete="off" spellcheck="false">
+      <button class="copy-btn" id="copyBtn" type="button">
+        <span class="copy-icon" aria-hidden="true">▢</span> Copiar
+      </button>
+    </div>
+
+    <div class="settings">
+      <div class="length-header">
+        <label for="length">Longitud: <strong id="lengthValue">16</strong></label>
+        <span class="range-hint">8 - 64</span>
+      </div>
+
+      <input id="length" type="range" min="8" max="64" value="16">
+
+      <div class="settings-divider"></div>
+      <div class="option-title">Incluir caracteres:</div>
+
+      <div class="options">
+        <label class="option">
+          <input type="checkbox" id="upper" checked>
+          <span class="letter">A</span>
+          <span class="label">Mayúsculas (A-Z)</span>
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="numbers" checked>
+          <span class="letter">123</span>
+          <span class="label">Números (0-9)</span>
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="lower" checked>
+          <span class="letter">a</span>
+          <span class="label">Minúsculas (a-z)</span>
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="symbols" checked>
+          <span class="letter">#</span>
+          <span class="label">Símbolos (!@#$...)</span>
+        </label>
+      </div>
+    </div>
+
+    <button class="generate-btn" id="generateBtn" type="button">
+      <span class="refresh" aria-hidden="true">⟳</span>
+      Generar contraseña
+    </button>
+
+    <section class="strength" aria-live="polite">
+      <div class="strength-title"><span>⬟</span> Fuerza de la contraseña</div>
+
+      <div class="strength-line">
+        <div class="strength-track" id="progress"
+             role="progressbar" aria-label="Entropía estimada"
+             aria-valuemin="0" aria-valuemax="128" aria-valuenow="0">
+          <div class="strength-bar" id="bar"></div>
+        </div>
+        <span class="strength-label" id="status">—</span>
+      </div>
+
+      <p class="entropy" id="entropy">
+        Entropía estimada: <strong>—</strong>
+      </p>
+
+      <div class="strength-note">
+        <span>ⓘ</span>
+        <span>Una contraseña sólida debe ser larga, impredecible y diferente para cada servicio.</span>
+      </div>
+    </section>
+  </section>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="rightbar">
+
+    <section class="panel info-panel" id="tips-panel">
+      <h2 class="info-heading"><span class="icon">♧</span> CONSEJOS RÁPIDOS</h2>
+      <ul class="tips">
+        <li>Usa contraseñas diferentes para cada servicio.</li>
+        <li>No incluyas información personal.</li>
+        <li>Utiliza un gestor de contraseñas.</li>
+        <li>Activa la autenticación en dos pasos (2FA).</li>
+      </ul>
+    </section>
+
+    <section class="panel info-panel">
+      <h2 class="info-heading"><span class="icon">☠</span> TIPOS DE ATAQUES</h2>
+      <div class="attack-list">
+        <div class="attack">
+          <span>Fuerza bruta</span>
+          <div class="attack-meter" aria-label="Concepto de ataque">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+          </div>
+        </div>
+        <div class="attack">
+          <span>Diccionario</span>
+          <div class="attack-meter">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i>
+          </div>
+        </div>
+        <div class="attack">
+          <span>Credential stuffing</span>
+          <div class="attack-meter">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
+          </div>
+        </div>
+        <div class="attack">
+          <span>Ataque offline</span>
+          <div class="attack-meter">
+            <i class="on"></i><i class="on"></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel info-panel">
+      <h2 class="info-heading"><span class="icon">&lt;/&gt;</span> CARACTERES DISPONIBLES</h2>
+      <div class="char-list">
+        <div class="char-item"><span>Mayúsculas</span><span>26</span></div>
+        <div class="char-item"><span>Minúsculas</span><span>26</span></div>
+        <div class="char-item"><span>Números</span><span>10</span></div>
+        <div class="char-item"><span>Símbolos</span><span id="symbolCount">?</span></div>
+        <div class="char-item char-total"><span>Total seleccionado</span><span id="totalChars">88</span></div>
+      </div>
+    </section>
+
+  </aside>
+</main>
+
+<!-- TERMINAL LOG -->
+<section class="terminal" id="about">
+  <div class="terminal-lines">
+    <div><span class="prompt">&gt;</span> Inicializando generador criptográfico... <span class="ok">✓</span></div>
+    <div>&nbsp;&nbsp;Utilizando crypto.getRandomValues()... <span class="ok">✓</span></div>
+    <div>&nbsp;&nbsp;Listo. ¡Genera y mantén tus cuentas seguras!</div>
+    <div><span class="ok">_</span></div>
+  </div>
+
+  <div class="matrix" aria-hidden="true" id="matrix"></div>
+  <div class="terminal-cat" aria-hidden="true"> ฅ^•ﻌ•^ฅ </div>
+</section>
+
+<footer class="footer">
+  <span>Hecho con <span class="heart">♥</span> para una internet más segura.</span>
+  <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">◉ GitHub Pages</a>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js" defer></script>
+
 </body>
 </html>
