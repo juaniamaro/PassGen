@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#02070b">
     <meta name="description" content="Generador de contraseñas seguras con estética cyberpunk.">
+
     <title>pass_gen.exe | Cyber Tools</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +23,12 @@
     <header class="topbar">
         <div>
             <div class="brand">
-                <span class="prompt">&gt;</span> pass_gen.exe
+                <span class="prompt">&gt;</span> pass_gen
             </div>
-            <p class="tagline">Genera contraseñas. Protege tu mundo.</p>
+
+            <p class="tagline">
+                Genera contraseñas. Protege tu mundo.
+            </p>
         </div>
 
         <div class="online">
@@ -33,11 +37,12 @@
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- DISTRIBUCIÓN PRINCIPAL -->
     <main class="dashboard">
 
-        <!-- PANEL IZQUIERDO -->
+        <!-- NAVEGACIÓN IZQUIERDA -->
         <aside class="panel sidebar">
+
             <nav class="nav" aria-label="Navegación principal">
                 <button class="nav-item active" type="button" data-section="generator">
                     Generador
@@ -57,9 +62,10 @@
                 no es un producto,<br>
                 es un hábito.”
             </p>
+
         </aside>
 
-        <!-- GENERADOR DE CONTRASEÑAS -->
+        <!-- GENERADOR CENTRAL -->
         <section class="panel generator" id="generator">
 
             <div class="section-heading">
@@ -69,6 +75,7 @@
 
             <!-- CONTRASEÑA GENERADA -->
             <div class="password-row">
+
                 <div class="lock" aria-hidden="true">♟</div>
 
                 <input
@@ -84,6 +91,7 @@
                     <span class="copy-icon" aria-hidden="true">▢</span>
                     Copiar
                 </button>
+
             </div>
 
             <!-- CONFIGURACIÓN -->
@@ -108,7 +116,9 @@
 
                 <div class="settings-divider"></div>
 
-                <div class="option-title">Incluir caracteres:</div>
+                <div class="option-title">
+                    Incluir caracteres:
+                </div>
 
                 <div class="options">
 
@@ -119,15 +129,15 @@
                     </label>
 
                     <label class="option">
-                        <input type="checkbox" id="minusculas" checked>
-                        <span class="letter">a</span>
-                        <span class="label">Minúsculas (a-z)</span>
-                    </label>
-
-                    <label class="option">
                         <input type="checkbox" id="numeros" checked>
                         <span class="letter">123</span>
                         <span class="label">Números (0-9)</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" id="minusculas" checked>
+                        <span class="letter">a</span>
+                        <span class="label">Minúsculas (a-z)</span>
                     </label>
 
                     <label class="option">
@@ -139,13 +149,13 @@
                 </div>
             </div>
 
-            <!-- BOTÓN GENERAR -->
+            <!-- GENERAR CONTRASEÑA -->
             <button class="generate-btn" id="generateBtn" type="button">
                 <span class="refresh" aria-hidden="true">⟳</span>
                 Generar contraseña
             </button>
 
-            <!-- SEGURIDAD -->
+            <!-- INDICADOR DE SEGURIDAD -->
             <section class="strength" aria-live="polite">
 
                 <div class="strength-title">
@@ -154,15 +164,17 @@
                 </div>
 
                 <div class="strength-line">
+
                     <div class="strength-track">
                         <div class="strength-fill" id="strengthFill"></div>
                     </div>
 
                     <span class="strength-label" id="strengthText">—</span>
+
                 </div>
 
                 <p class="entropy" id="entropy">
-                    Entropía estimada: pendiente de calcular
+                    Entropía estimada: calculando...
                 </p>
 
                 <div class="strength-note">
@@ -174,13 +186,15 @@
                 </div>
 
             </section>
+
         </section>
 
-        <!-- PANEL DERECHO -->
+        <!-- COLUMNA DERECHA -->
         <aside class="rightbar">
 
             <!-- CONSEJOS -->
             <section class="panel info-panel" id="tips">
+
                 <h2 class="info-heading">
                     <span class="icon" aria-hidden="true">♧</span>
                     CONSEJOS RÁPIDOS
@@ -192,10 +206,12 @@
                     <li>Utiliza un gestor de contraseñas.</li>
                     <li>Activa la autenticación en dos pasos (2FA).</li>
                 </ul>
+
             </section>
 
             <!-- TIPOS DE ATAQUES -->
             <section class="panel info-panel">
+
                 <h2 class="info-heading">
                     <span class="icon" aria-hidden="true">☠</span>
                     TIPOS DE ATAQUES
@@ -205,7 +221,7 @@
 
                     <div class="attack">
                         <span>Fuerza bruta</span>
-                        <div class="attack-meter" aria-label="Nivel ilustrativo">
+                        <div class="attack-meter" aria-label="Indicador ilustrativo">
                             <i class="on"></i>
                             <i class="on"></i>
                             <i class="on"></i>
@@ -216,7 +232,7 @@
 
                     <div class="attack">
                         <span>Diccionario</span>
-                        <div class="attack-meter" aria-label="Nivel ilustrativo">
+                        <div class="attack-meter" aria-label="Indicador ilustrativo">
                             <i class="on"></i>
                             <i class="on"></i>
                             <i class="on"></i>
@@ -227,7 +243,7 @@
 
                     <div class="attack">
                         <span>Credential stuffing</span>
-                        <div class="attack-meter" aria-label="Nivel ilustrativo">
+                        <div class="attack-meter" aria-label="Indicador ilustrativo">
                             <i class="on"></i>
                             <i class="on"></i>
                             <i class="on"></i>
@@ -238,7 +254,7 @@
 
                     <div class="attack">
                         <span>Ataque offline</span>
-                        <div class="attack-meter" aria-label="Nivel ilustrativo">
+                        <div class="attack-meter" aria-label="Indicador ilustrativo">
                             <i class="on"></i>
                             <i class="on"></i>
                             <i></i>
@@ -248,34 +264,42 @@
                     </div>
 
                 </div>
+
             </section>
 
-            <!-- ESTADÍSTICAS -->
+            <!-- CARACTERES DISPONIBLES -->
             <section class="panel info-panel">
+
                 <h2 class="info-heading">
                     <span class="icon" aria-hidden="true">&lt;/&gt;</span>
                     CARACTERES DISPONIBLES
                 </h2>
 
                 <div class="char-list">
+
                     <div class="char-item">
                         <span>Grupos seleccionados</span>
                         <span id="groupCount">4</span>
                     </div>
 
                     <div class="char-item char-total">
-                        <span>Caracteres disponibles</span>
+                        <span>Total seleccionado</span>
                         <span id="poolCount">94</span>
                     </div>
+
                 </div>
+
             </section>
 
         </aside>
+
     </main>
 
-    <!-- TERMINAL INFORMATIVA -->
+    <!-- TERMINAL INFERIOR -->
     <section class="terminal" id="about">
+
         <div class="terminal-lines">
+
             <div>
                 <span class="prompt">&gt;</span>
                 Inicializando generador criptográfico...
@@ -291,14 +315,19 @@
                 &nbsp;&nbsp;Listo. ¡Genera y mantén tus cuentas seguras!
             </div>
 
-            <div><span class="ok">_</span></div>
+            <div>
+                <span class="ok">_</span>
+            </div>
+
         </div>
 
         <div class="matrix" aria-hidden="true" id="matrixChars"></div>
+
     </section>
 
     <!-- PIE DE PÁGINA -->
     <footer class="footer">
+
         <span>
             Hecho con <span class="heart">♥</span>
             para una internet más segura.
@@ -311,9 +340,10 @@
         >
             ◉ GitHub Pages
         </a>
+
     </footer>
 
-    <!-- AVISO TEMPORAL -->
+    <!-- MENSAJE TEMPORAL -->
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 </body>
